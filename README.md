@@ -62,46 +62,77 @@ Running The Emulator (emu8086) Intro 8086 Microprocessor Emulator, also known as
 
 10.	If no errors are found click on run the program and check the status of various flags in the flags tab as shown below 
 
-
-
-
-
-
 ![image](https://user-images.githubusercontent.com/36288975/189273277-113a2a33-4a40-4ff8-95a5-ecd3a1f504fe.png)
-
-
-
-
-
-
-
 ## Programs for arithmetic  operations
 
 ## Addition  of 8 bit ALP 
-
-
-
+```
+org 100h
+mov al, 93H
+mov bl, 12H
+add al,bl
+hlt
+```
 ## Output  
- 
+ ![image](https://github.com/user-attachments/assets/d1eee930-6c8f-4bee-ba61-9f27973581bf)
+
 ## Subtraction   of 8 bit numbers  ALP 
- 
+ ```
+org 100h
+MOV AL,[4300H]
+MOV BL,[4301H]
+SUB AL,BL
+MOV [4302H],AL
+```
 ## Output  
-## Multiplication alp 
- ## Output  
+![image](https://github.com/user-attachments/assets/87e678e0-4010-4c55-84a8-e26c40940f96)
 
+## Multiplication alp 
+```
+org 100h
+MOV AL,[4400H]
+MOV BL,[4401H]
+MUL BL
+MOV [4402H],AL
+MOV [4403H],AH
+```
+ ## Output  
+![image](https://github.com/user-attachments/assets/0b142cd8-1b8d-4a5f-98c4-7b8d4cfe1c18)
 
 ## Division alp 
+```
+org 100h
+MOV AL,[4300H]
+MOV BL,[4301H]
+DIV BL
+MOV [4302H],AL
 
+MOV [4303H],AH
+```
 ## Output  
+![image](https://github.com/user-attachments/assets/ad1cb4f1-1674-4731-81cd-43a26cbbe8b2)
 
+## Logical Operation
+```
+org 100h
+MOV AX,0A32H
+MOV BX,0B31H
+MOV SI,5000H
+OR AX,BX
+MOV [SI],AX
+MOV AX,0A32H
+AND AX,BX
+MOV [SI+2],AX
+MOV AX,0A32H
+XOR AX,BX
+MOV [SI+4],AX
+MOV AX,0A32H
+NOT AX
+MOV [SI+6],AX
+ret
+```
+## Output
+![Screenshot 2025-03-10 141814](https://github.com/user-attachments/assets/1325390f-d806-40b2-838d-e69771ff46f9)
 
 ## Result :
- 
-
-
-
-
-
-
-
-
+Thus , the fundamental Arithmetic and Logical operations are excuted successfully. 
